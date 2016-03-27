@@ -18,21 +18,20 @@ def get_character_details(source, name):
            blood_status = row["blood_status"]
            return name, house, blood_status
 
-character_list = get_names(CHARACTERS)
-
 def test(source):
     for row in source:
         name = row["Name"]
     return name
 
+character_list = get_names(CHARACTERS)
 name = test(CHARACTERS)
 name, house, blood_status = get_character_details(CHARACTERS, name)
 
-@app.route('/')
+@app.route('/hp_characters')
 def characters():
     return render_template('main_app.html', character_list=character_list, name=name)
 
-@app.route('/characters/<a>')
+@app.route('/hp_characters/<a>')
 def details(a):
     return render_template('character_app.html', name=name, house=house, blood_status=blood_status)
 
