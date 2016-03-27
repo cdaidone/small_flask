@@ -31,8 +31,8 @@ name, house, blood_status = get_character_details(CHARACTERS, name)
 def characters():
     return render_template('main_app.html', character_list=character_list, name=name)
 
-@app.route('/hp_characters/<a>')
-def details(a):
+@app.route('/hp_characters/<li>')
+def details(li):
     return render_template('character_app.html', name=name, house=house, blood_status=blood_status)
 
 
