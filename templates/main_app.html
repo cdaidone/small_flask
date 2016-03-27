@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title> Harry Potter Characters </title>
+</head>
+
+<body>
+<div id="container">
+
+<h1>Harry Potter Characters</h1>
+<!--<p>Name: {{ Name }}</p>-->
+<!--
+<ul>
+  {% for CHARACTERS in characters %}
+    <li>{{ CHARACTERS }}</li>
+  {% endfor %}
+</ul>
+-->
+<ul>
+{% for list in character_list %}
+  <li><a href="/characters/{{ name }}">{{ list }}</a></li>
+{% endfor %}
+</ul>
+</div> <!-- close container -->
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title> Harry Potter Character Details </title>
+</head>
+
+<body>
+<div id="container">
+  <h1>{{ name }}</h1>
+
+  <p>House: {{ house }}</p>
+  <p>Blood-Status: {{ blood_status }}</p>
+
+  <a href={{ url_for('characters', _external=True)}}>Go Back</a>
+</div> <!-- close container -->
+
+</body>
+</html>
