@@ -1,4 +1,4 @@
-from characters import CHARACTERS
+from hp_characters import CHARACTERS
 from flask import Flask, render_template
 app = Flask(__name__)
 
@@ -17,7 +17,6 @@ def get_character_details(source, name):
            house = row["House"]
            blood_status = row["blood_status"]
            return name, house, blood_status
-
 
 character_list = get_names(CHARACTERS)
 
