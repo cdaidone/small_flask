@@ -8,31 +8,38 @@ def get_names(source):
     for row in source:
         name = row["Name"]
         names.append(name)
-    return sorted(names)
+    return names
 
 
 def get_character_details(source, name):
     for row in source:
+        name = row["Name"]
+        house = row["House"]
+        blood_status = row["blood_status"]
         if name == row["Name"]:
-           house = row["House"]
-           blood_status = row["blood_status"]
-           return name, house, blood_status
+            house = row["House"]
+            blood_status = row["blood_status"]
+            return name, house, blood_status
+
 
 def test(source):
-    for row in source:
-        name = row["Name"]
-    return name
+    for s in CHARACTERS:
+        name = s["Name"]
+        print name
+
 
 character_list = get_names(CHARACTERS)
 name = test(CHARACTERS)
 name, house, blood_status = get_character_details(CHARACTERS, name)
+#print character_list
+#print name
 
-@app.route('/hp_characters')
+@app.route('/characters')
 def characters():
     return render_template('main_app.html', character_list=character_list, name=name)
 
-@app.route('/hp_characters/<li>')
-def details(li):
+@app.route('/characters/<name>')
+def details(name):
     return render_template('character_app.html', name=name, house=house, blood_status=blood_status)
 
 
